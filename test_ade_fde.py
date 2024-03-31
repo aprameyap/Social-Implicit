@@ -10,7 +10,7 @@ from model import SocialImplicit
 from CFG import CFG
 
 
-def test(KSTEPS=20):
+def test(KSTEPS=1):
 
     global loader_test, model, ROBUSTNESS
     model.eval()
@@ -67,6 +67,8 @@ def test(KSTEPS=20):
                 obsrvs.append(V_x_rel_to_abs[:, n:n + 1, :])
                 number_of.append(1)
 
+                print(pred)
+
                 ade_ls[n].append(ade(pred, target, number_of))
                 fde_ls[n].append(fde(pred, target, number_of))
 
@@ -87,14 +89,14 @@ for ROBUSTNESS in [0]:  #[-0.1, -0.01, 0, +0.01, +0.1]:
     print("*" * 30)
 
     paths = [
-        './checkpoint/social-implicit-eth',
-        './checkpoint/social-implicit-hotel',
-        './checkpoint/social-implicit-zara1',
-        './checkpoint/social-implicit-zara2',
-        './checkpoint/social-implicit-univ',
+        # './checkpoint/social-implicit-eth',
+        # './checkpoint/social-implicit-hotel',
+        # './checkpoint/social-implicit-zara1',
+        # './checkpoint/social-implicit-zara2',
+        # './checkpoint/social-implicit-univ',
         './checkpoint/social-implicit-sdd',
     ]
-    KSTEPS = 20
+    KSTEPS = 1
 
     EASY_RESULTS = []
 

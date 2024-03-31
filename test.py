@@ -139,7 +139,7 @@ class SocialImplicit(nn.Module):
         self.noise = tdist.multivariate_normal.MultivariateNormal(
             torch.zeros(2), torch.Tensor([[1, 0], [0, 1]]))
 
-    def forward(self, v, obs_traj, KSTEPS=1):
+    def forward(self, v, obs_traj, KSTEPS=20):
 
         noise = self.noise.sample((KSTEPS, )).unsqueeze(-1).unsqueeze(-1).to(
             v.device).double().contiguous()
@@ -166,3 +166,15 @@ class SocialImplicit(nn.Module):
                                                        noise,
                                                        weight_select=i)
         return v_out.contiguous()
+
+model = SocialImplicit(
+    spatial_input=2,
+    spatial_output=2,
+    temporal_input=8,
+    temporal_output=12,
+    bins=[0, 0.01, 0.1, 1.2],
+    noise_weight=[0.05, 1, 4, 8]
+)
+model.load_state_dict(torch.load('checkpoint/social_implicit_sdd_test/model_final.pt'))
+model.eval()
+model = model.cuda()
