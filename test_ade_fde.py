@@ -200,6 +200,5 @@ with mlflow.start_run():
         print(EASY_RESULTS)
 
     mlflow.log_param("K ", KSTEPS)
-    mlflow.log_param("Temporal output ", temporal_output)
     mlflow.log_metric("ADE ", EASY_RESULTS[0][1])
     mlflow.log_metric("FDE ", EASY_RESULTS[0][2])
