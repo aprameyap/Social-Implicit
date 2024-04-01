@@ -9,7 +9,7 @@ from metrics import *
 from model import SocialImplicit
 from CFG import CFG
 
-from model import temporal_output, KSTEPS
+from model import KSTEPS
 import mlflow
 
 
