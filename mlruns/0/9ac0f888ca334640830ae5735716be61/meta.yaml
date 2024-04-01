@@ -1,0 +1,16 @@
+artifact_uri: file:///home/gssc/Test%20notebooks/Social-Implicit/mlruns/0/9ac0f888ca334640830ae5735716be61/artifacts
+deleted_time: 1711945067088
+end_time: 1711944016638
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+name: ''
+run_id: 9ac0f888ca334640830ae5735716be61
+run_uuid: 9ac0f888ca334640830ae5735716be61
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711944014989
+status: 4
+tags: []
+user_id: gssc

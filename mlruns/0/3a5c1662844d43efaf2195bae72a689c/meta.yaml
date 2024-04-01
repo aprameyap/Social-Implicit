@@ -1,0 +1,15 @@
+artifact_uri: file:///home/gssc/Test%20notebooks/Social-Implicit/mlruns/0/3a5c1662844d43efaf2195bae72a689c/artifacts
+end_time: 1711944651634
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3a5c1662844d43efaf2195bae72a689c
+run_name: handsome-slug-637
+run_uuid: 3a5c1662844d43efaf2195bae72a689c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711944649992
+status: 3
+tags: []
+user_id: gssc

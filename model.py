@@ -2,13 +2,15 @@ import torch
 import torch.nn as nn
 import torch.distributions as tdist
 
+temporal_output = int(input("Temporal output: "))
+KSTEPS = int(input("K: "))
 
 class SocialCellLocal(nn.Module):
     def __init__(self,
                  spatial_input=2,
                  spatial_output=2,
                  temporal_input=8,
-                 temporal_output=12):
+                 temporal_output=temporal_output):
         super(SocialCellLocal, self).__init__()
 
         #Spatial Section
@@ -48,7 +50,7 @@ class SocialCellLocal(nn.Module):
 
         #Final Output
         v = v.permute(0, 2, 1).reshape(v_shape[0], v_shape[3], v_shape[1],
-                                       12).permute(0, 2, 3, 1)
+                                       temporal_output).permute(0, 2, 3, 1)
         return v
 
 
@@ -57,7 +59,7 @@ class SocialCellGlobal(nn.Module):
                  spatial_input=2,
                  spatial_output=2,
                  temporal_input=8,
-                 temporal_output=12,
+                 temporal_output=temporal_output,
                  noise_w=None):
         super(SocialCellGlobal, self).__init__()
 
@@ -120,7 +122,7 @@ class SocialImplicit(nn.Module):
                  spatial_input=2,
                  spatial_output=2,
                  temporal_input=8,
-                 temporal_output=12,
+                 temporal_output=temporal_output,
                  bins=[0, 0.01, 0.1, 1.2],
                  noise_weight=[0.05, 1, 4, 8]):
         super(SocialImplicit, self).__init__()
@@ -154,7 +156,7 @@ class SocialImplicit(nn.Module):
             self.bins,
             right=True,
         ) - 1  #Used to set each vector to a zone
-        v_out = torch.zeros(KSTEPS, 2, 12, v.shape[-1]).double().to(
+        v_out = torch.zeros(KSTEPS, 2, temporal_output, v.shape[-1]).double().to(
             v.device).contiguous()  #Stores results of each zone
         #Per each Social-Zone, call the proper Social-Cell
         for i in range(len(self.bins)):

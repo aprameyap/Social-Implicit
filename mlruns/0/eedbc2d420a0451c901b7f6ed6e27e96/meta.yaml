@@ -1,0 +1,15 @@
+artifact_uri: file:///home/gssc/Test%20notebooks/Social-Implicit/mlruns/0/eedbc2d420a0451c901b7f6ed6e27e96/artifacts
+end_time: 1711944236265
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: eedbc2d420a0451c901b7f6ed6e27e96
+run_name: clean-sponge-730
+run_uuid: eedbc2d420a0451c901b7f6ed6e27e96
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711944234528
+status: 3
+tags: []
+user_id: gssc

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/gssc/Test%20notebooks/Social-Implicit/mlruns/0/79b5505c37ab4eba862c00fb691df533/artifacts
+end_time: 1711944687535
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 79b5505c37ab4eba862c00fb691df533
+run_name: enthused-lark-496
+run_uuid: 79b5505c37ab4eba862c00fb691df533
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711944677467
+status: 3
+tags: []
+user_id: gssc
